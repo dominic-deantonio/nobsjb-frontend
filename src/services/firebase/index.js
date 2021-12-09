@@ -5,12 +5,12 @@ import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 
 // Configure Firebase.
 const firebaseConfig = {
-    apiKey: "AIzaSyCgmeMXGHRuMsafcprc8dOS5rpJ_yq38vA",
-    authDomain: "nobs-jobs.firebaseapp.com",
-    projectId: "nobs-jobs",
-    storageBucket: "nobs-jobs.appspot.com",
-    messagingSenderId: "535829721787",
-    appId: "1:535829721787:web:910271aff5daffae522f9e"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_MESSAGE_SENDER_ID,
+    appId: process.env.REACT_APP_APP_ID
 };
 
 const app = firebase.initializeApp(firebaseConfig);
