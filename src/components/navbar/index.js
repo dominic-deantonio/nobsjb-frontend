@@ -1,49 +1,31 @@
 import React from 'react';
-import { useState } from 'react';
-import { Button } from 'react-bootstrap';
-import { test } from '../../services/api'
+import { Link } from 'react-router-dom';
+import { logout } from '../../services/firebase';
 
 function NavBar(props) {
-    const [count, setCount] = useState(0);
-    const [name, setName] = useState('Initial value');
-
-    function showProps() {
-        console.log(props);
-    }
-
     return (
-        <>
-            <p>Count {count} times</p>
-            <button onClick={() => setCount(count + 1)}>Increment</button>
-            <button onClick={showProps}>Show props</button>
-            <button className='btn btn-primary' onClick={test}>Run Test</button>
-            <input value={name} onChange={e => setName(e.target.value)}></input>
-            <Button >Bootstrap button</Button>
-            <p>{props.text}</p>
-            <p>{name}</p>
-        </>
+        <div>
+            <h1>NoBS Jobs</h1>
+            {props.user && <p>Logged in: <Link to="/profile">{props.user?.email}</Link></p>}
+            {!props.user && <Link to="/profile">Profile</Link>}
+            <p>Env: {process.env.REACT_APP_HELLO}</p>
+            <nav
+                style={{
+                    borderBottom: "solid 1px",
+                    paddingBottom: "1rem"
+                }}>
+                {/* <Link className={path === "/create-post" ? 'btn btn-primary' : ''} to="/create-post">Create Post</Link> */}
+                <Link to="/create-post">Create Post</Link><br />
+                <Link to="/favorites">Favorites</Link><br />
+                <Link to="/">Home</Link><br/>
+                <button onClick={logout}>Logout</button>
+                {/* <Link to="/jobs">Jobs</Link>
+                
+                <Link to="/error">Error</Link> */}
+            </nav>
+        </div>
     );
+
 }
-
-
-// class NavBar extends React.Component {
-
-//     state = {
-//         count: 0
-//     }
-
-//     incrementCount = () => {
-//         this.setState({ count: this.state.count + 1 });
-//     }
-
-//     render() {
-//         return (
-//             <>
-//                 <p>Count {this.state.count} times</p>
-//                 <button onClick={this.incrementCount}>Increment</button>
-//             </>
-//         );
-//     }
-// }
 
 export default NavBar;

@@ -1,10 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import { CreatePostView } from "./routes/createPostView";
 import { FavoritesView } from "./routes/favoritesView";
@@ -19,10 +15,10 @@ render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="create-post" element={<CreatePostView />} />
-          <Route path="favorites" element={<FavoritesView />} />          
+          <Route path="favorites" element={<FavoritesView />} />
           <Route path="error" element={<NotFoundView />} />
           <Route path="profile" element={<ProfileView />} />
-          <Route path="jobs" element={<JobsView />} />    
+          <Route path="jobs" element={<JobsView />} />
           <Route
             path="*"
             element={
@@ -35,6 +31,5 @@ render(
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
-
   rootElement
 );
