@@ -28,11 +28,7 @@ const uiConfig = {
 
 function SignInScreen() {
     return (
-        <div className='d-flex flex-column align-items-center'>
-            <h1>NoBS Jobs</h1>
-            <p>Please sign-in:</p>            
-            <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
-        </div>
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
     );
 }
 

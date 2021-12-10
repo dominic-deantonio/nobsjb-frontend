@@ -17,7 +17,7 @@ function NavBar(props) {
                     {isLoggedIn && <Navbar.Toggle aria-controls="responsive-navbar-nav" />}
                     {isLoggedIn &&
                         <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav variant='pills'>
+                            <Nav>
                                 <NavBarButton url='/create-post' label='Create Post' />
                                 <NavBarButton url='/favorites' label='Favorites' />
                                 <NavBarButton url='/profile' label='Profile' />
