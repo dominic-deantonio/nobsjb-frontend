@@ -8,12 +8,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 export default function App() {
   const location = useLocation();
   const [user, loading, error] = useAuthState(auth);
-    
+
   return (
     <>
       <NavBar user={user} loading={loading} />
-      {location.pathname === '/' && <HomeView />}
-      <Outlet />
+      {location.pathname === '/' && <HomeView user={user} loading={loading} />}
+      <Outlet />      
     </>
   );
 }
