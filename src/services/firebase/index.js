@@ -37,18 +37,18 @@ function SignInScreen() {
     return (
         <div className='d-flex flex-column align-items-center'>
             <h1>NoBS Jobs</h1>
-            <p>Please sign-in:</p>
+            <p>Please sign-in:</p>            
             <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
         </div>
     );
 }
 
-const logout = () => {
+const signOut = () => {
     auth.signOut();
 };
 
 export {
     auth,
     SignInScreen,
-    logout,
+    signOut,
 };
