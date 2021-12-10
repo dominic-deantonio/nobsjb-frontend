@@ -11,7 +11,7 @@ export default function App() {
     
   return (
     <>
-      <NavBar user={user} />
+      <NavBar user={user} loading={loading} />
       {location.pathname === '/' && <HomeView />}
       <Outlet />
     </>
