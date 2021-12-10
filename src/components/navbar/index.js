@@ -1,19 +1,33 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { signOut } from '../../services/firebase';
+import { useLocation } from "react-router-dom";
+import { NavBarButton } from '../navBarButton';
+
 
 function NavBar(props) {
+
+    const location = useLocation();
+    const isLoggedIn = props.user || props.loading;
     return (
+
         <div>
-            <Navbar bg="primary" variant="dark" className='shadow'>
+            <Navbar collapseOnSelect expand="md" bg="danger" variant="dark" className='shadow'>
                 <Container>
                     <Navbar.Brand href="/">NoBS Jobs</Navbar.Brand>
-                    <Nav className="me-auto">
-                        {(props.user || props.loading) && <Nav.Link href="/create-post">Create Post</Nav.Link>}
-                        {(props.user || props.loading) && <Nav.Link href="/favorites">Favorites</Nav.Link>}
-                        {(props.user || props.loading) && <Nav.Link onClick={signOut}>Sign Out</Nav.Link>}
-                        {(!props.user && !props.loading) && <Nav.Link href='/profile'>Sign In</Nav.Link>}
-                    </Nav>
+                    {isLoggedIn && <Navbar.Toggle aria-controls="responsive-navbar-nav" />}
+                    {isLoggedIn &&
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav variant='pills'>
+                                <NavBarButton url='/create-post' label='Create Post' />
+                                <NavBarButton url='/favorites' label='Favorites' />
+                                <NavBarButton url='/profile' label='Profile' />
+                            </Nav>
+                        </Navbar.Collapse>}
+                    {!isLoggedIn &&
+                        <Nav>
+                            <NavBarButton url='/profile' label='Sign-in' />
+                        </Nav>}
+
                 </Container>
             </Navbar>
         </div>

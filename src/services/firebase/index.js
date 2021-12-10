@@ -23,13 +23,6 @@ const uiConfig = {
     signInSuccessUrl: '/',
     signInOptions: [
         firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-        firebase.auth.GithubAuthProvider.PROVIDER_ID,
-        'apple.com',
-        'microsoft.com',
-        'yahoo.com',
-        firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     ],
 };
 
