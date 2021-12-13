@@ -1,20 +1,19 @@
 import { auth } from "../../services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import './style.css';
 import { useNavigate } from "react-router-dom";
 import { getJobs } from "../../services/api";
 import { useState } from "react";
-import Loader from "react-loader-spinner";
-import { LoaderButton } from "../../components/loaderButton";
+import { SearchBox } from "../../components/searchBox";
+import './style.css';
 
 export function HomeView() {
   const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const [working, setWorking] = useState(false);
 
-  async function doFindJobs() {
+  async function doFindJobs(what, where) {
     setWorking(true);
-    const jobs = await getJobs();
+    const jobs = await getJobs(what, where);
     if (jobs === undefined || jobs?.length === 0) {
       // No data to show. Consider showing a toast or an error message?
     } else {
@@ -24,13 +23,9 @@ export function HomeView() {
   }
 
   return (
-    <>
-      <div className="container d-flex flex-column search-box">
-        <h1 className="text-center">No BS</h1>
-        <input className="mt-2" placeholder="What" />
-        <input className="mt-2" placeholder="Where" />
-        <LoaderButton label='Find jobs' onClick={doFindJobs} working={working} />
-      </div>
-    </>
+    <div className='pad-top d-flex flex-column align-items-center'>
+      <h1 className="">No BS</h1>
+      <SearchBox callback={doFindJobs} working={working} />
+    </div>
   );
 }

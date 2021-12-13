@@ -18,7 +18,7 @@ function NavBar(props) {
                     {isLoggedIn &&
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav>
-                                <NavBarButton url='/create-post' label='Create Post' />
+                                <NavBarButton url='/create-post' label='Post a Job' />
                                 <NavBarButton url='/favorites' label='Favorites' />
                                 <NavBarButton url='/profile' label='Profile' />
                             </Nav>
