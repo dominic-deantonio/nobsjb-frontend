@@ -7,6 +7,7 @@ import { FavoritesView } from "./routes/favoritesView";
 import { NotFoundView } from "./routes/notFoundView";
 import { ProfileView } from "./routes/profileView";
 import { JobsView } from "./routes/jobsView";
+import { JobDetailView } from "./routes/jobDetailView";
 
 const rootElement = document.getElementById("root");
 render(
@@ -19,6 +20,7 @@ render(
           <Route path="error" element={<NotFoundView />} />
           <Route path="profile" element={<ProfileView />} />
           <Route path="jobs" element={<JobsView />} />
+          <Route path='job' element={<JobDetailView />} />
           <Route
             path="*"
             element={

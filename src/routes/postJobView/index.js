@@ -30,16 +30,17 @@ export function PostJobView() {
         <input id='benefits' />
         <br />
         <label htmlFor='salary'>Salary</label>
-        <input id='salary' />
+        <input type='number' id='salary' />
         <br />
         <label htmlFor='qualifications'>Qualifications</label>
-        <input id='qualifications' />
+        <textarea id='qualifications' />
         <br />
-        <label htmlFor='description'>Descriptions</label>
-        <input id='description' />
+        <label htmlFor='description'>Description</label>
+        <textarea id='description' />
         <br />
       </form>
       <button className="btn btn-primary" type="submit" form="job-form" >Post Job</button>
+      <br/><br/><br/><br/>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import { SalaryLabel } from "../salaryLabel";
+
 export function JobCard(props) {
     const {
         title,
@@ -12,22 +14,28 @@ export function JobCard(props) {
         userdidapply,
         userapplieddate,
         isfavorite } = props.job;
-    const { isSelected } = props;
+    const { isSelected, user } = props;
     return (
-        <div className="card mt-1 shadow">
-            <div className={`btn ${isSelected ? 'btn-danger' : 'btn-light'} p-2`}>
+        <div className="card mt-1 shadow-sm">
+            <div className={`${isSelected ? 'btn-danger' : 'btn-light'} p-1`}>
                 <div
                     onClick={props.select}>
-                    {title}<br />
-                    {salary}<br />
+                    <h5>{title}</h5>
+                    <div className="d-flex flex-row">
+                        <SalaryLabel salary={salary} />
+                        {user &&
+                            <>
+                                <div className="pe-1">
+                                    <button className="btn btn-dark ">{'<3'}</button>
+                                </div>
+                                <button className="btn btn-warning">{'(\\)'}</button>
+                            </>
+                        }
+
+
+                    </div>
                     {companyname}<br />
                     {location}<br />
-                    {payrating}<br />
-                    {payratinginfo}<br />
-
-                    Applied: {userdidapply}<br />
-                    Applied Date: {userapplieddate}<br />
-                    Is Favorite: {isfavorite}<br />
                 </div>
             </div>
 
