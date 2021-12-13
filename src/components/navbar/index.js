@@ -11,7 +11,7 @@ function NavBar(props) {
     return (
 
         <div>
-            <Navbar collapseOnSelect expand="md" bg="danger" variant="dark" className='shadow'>
+            <Navbar collapseOnSelect expand="md" bg="danger" variant="dark">
                 <Container>
                     <Navbar.Brand href="/">NoBS Jobs</Navbar.Brand>
                     {isLoggedIn && <Navbar.Toggle aria-controls="responsive-navbar-nav" />}
@@ -25,7 +25,7 @@ function NavBar(props) {
                         </Navbar.Collapse>}
                     {!isLoggedIn &&
                         <Nav>
-                            <NavBarButton url='/profile' label='Sign-in' />
+                            <NavBarButton url='/profile' label='Sign in' />
                         </Nav>}
 
                 </Container>
