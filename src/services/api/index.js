@@ -20,6 +20,8 @@ export async function getJobs(user, what, where) {
         console.log(e);
     }
 
+    toObject('hey', 'ho');
+
     await stall(500);
     return [
         {
@@ -241,8 +243,22 @@ export async function getJobs(user, what, where) {
     ];
 }
 
+async function getFavorites(user){
+    const url = getUrl('favorites');
+    if(user){
+        const response = await axios.get(url);
+    }else{
+        // User is not logged in
+        return [];
+    }
+}
+
 async function stall(stallTime = 3000) {
     await new Promise(resolve => setTimeout(resolve, stallTime));
+}
+
+function toObject(...names){
+    for (let i=0; i<names.length; i++) console.log(names[i]);
 }
 
 function getUrl(endpoint) {
