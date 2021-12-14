@@ -1,4 +1,25 @@
-export async function getJobs() {
+import axios from "axios";
+import { getIdToken } from "firebase/auth";
+
+const DOMAIN = process.env.REACT_APP_API_DOMAIN;
+
+export async function getJobs(user, what, where) {
+    const url = getUrl('find-jobs');
+    const payload = {
+        ...(user && { idToken: await getIdToken(user) }),
+        ...(what && { what: what }),
+        ...(where && { where: where }),
+    };
+    console.log(payload);
+    try {
+        const response = await axios.get(
+            url.toString(),
+        );
+        console.log(response);
+    } catch (e) {
+        console.log(e);
+    }
+
     await stall(500);
     return [
         {
@@ -222,4 +243,8 @@ export async function getJobs() {
 
 async function stall(stallTime = 3000) {
     await new Promise(resolve => setTimeout(resolve, stallTime));
+}
+
+function getUrl(endpoint) {
+    return `${DOMAIN}/${endpoint}`;
 }

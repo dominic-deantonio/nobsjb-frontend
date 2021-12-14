@@ -13,7 +13,7 @@ export function HomeView() {
 
   async function doFindJobs(what, where) {
     setWorking(true);
-    const jobs = await getJobs(what, where);
+    const jobs = await getJobs(user, what, where);
     if (jobs === undefined || jobs?.length === 0) {
       // No data to show. Consider showing a toast or an error message?
     } else {
