@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { NavBarButton } from '../navBarButton';
 
 
-function NavBar(props) {
+function Navigator(props) {
 
     const location = useLocation();
     const isLoggedIn = props.user || props.loading;
@@ -35,4 +35,4 @@ function NavBar(props) {
 
 }
 
-export default NavBar;
+export default Navigator;

@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { HomeView } from "./routes/homeView";
-import NavBar from './components/navBar';
+import Navigator from './components/navigator';
 import { auth } from "./services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <>
-      <NavBar user={user} loading={loading} />
+      <Navigator user={user} loading={loading} />
       {location.pathname === '/' && <HomeView user={user} loading={loading} />}
       <Outlet />      
     </>
