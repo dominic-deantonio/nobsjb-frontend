@@ -1,4 +1,4 @@
-# NOBSJb - backend
+# NOBSJb - Frontend
 
 Your final destination for job search
 
@@ -12,7 +12,7 @@ Project Team
 
 ## Project description
 
-Backend implementation for nobsjb
+Front implementation for nobsjb
 
 <br />
 
