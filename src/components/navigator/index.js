@@ -1,18 +1,22 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { NavBarButton } from '../navBarButton';
 import { getFavorites } from '../../services/api';
 
 
 function Navigator(props) {
 
-    const location = useLocation();
     const isLoggedIn = props.user || props.loading;
+    const navigate = useNavigate();
 
     async function goToFavorites() {
-        const results = await getFavorites(props.user);
-        console.log(results);
+        const favorites = await getFavorites(props.user);
+        if (favorites === undefined) {
+            // No data to show. Consider showing a toast or an error message?
+        } else {
+            navigate("/favorites", { state: favorites });
+        }
     }
 
     return (
@@ -26,7 +30,7 @@ function Navigator(props) {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav>
                                 <NavBarButton url='/create-post' label='Post a Job' />
-                                <NavBarButton onClick={goToFavorites} label='Favorites' />
+                                <NavBarButton url='/favorites' onClick={goToFavorites} label='Favorites' />
                                 <NavBarButton url='/profile' label='Profile' />
                             </Nav>
                         </Navbar.Collapse>}
