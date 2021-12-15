@@ -1,13 +1,11 @@
-// import { auth } from "../../services/firebase";
-// import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { getJobs } from "../../services/api";
 import { useState } from "react";
 import { SearchBox } from "../../components/searchBox";
 import './style.css';
+import logo from '../../../src/logo.png';
 
 export function HomeView() {
-  // const [user, loading, error] = useAuthState(auth);
   const navigate = useNavigate();
   const [working, setWorking] = useState(false);
 
@@ -24,7 +22,10 @@ export function HomeView() {
 
   return (
     <div className='pad-top d-flex flex-column align-items-center'>
-      <h1 className="">No BS</h1>
+      <div className="d-flex flex-row align-items-center p-3">
+        <h1 className="pe-3">No BS</h1>
+        <img src={logo} style={{ width: '70px' }} />
+      </div>
       <SearchBox callback={doFindJobs} working={working} />
     </div>
   );

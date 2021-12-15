@@ -1,5 +1,3 @@
-import { InfoCircle } from "react-bootstrap-icons";
-
 export function SalaryLabel(props) {
     const { salary } = props;
     return (
@@ -8,8 +6,6 @@ export function SalaryLabel(props) {
                 <div>
                     {getFormattedSalary(salary)}
                 </div>
-                {/* <div className="pe-2"/>
-                <div ><InfoCircle /></div> */}
             </div>
         </button>
     );

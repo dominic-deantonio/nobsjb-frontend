@@ -6,18 +6,11 @@ export function JobCard(props) {
         salary,
         companyname,
         location,
-        payrating,
-        payratinginfo,
-        details,
-        qualifications,
-        description,
-        userdidapply,
-        userapplieddate,
-        isfavorite } = props.job;
+    } = props.job;
     const { isSelected, user } = props;
     return (
-        <div className="card mt-1 shadow-sm">
-            <div className={`${isSelected ? 'btn-danger' : 'btn-light'} p-1`}>
+        <div className={`card ${isSelected ? 'border-primary' : 'btn-light'} mt-1 shadow-sm`}>
+            <div className={`p-1`}>
                 <div
                     onClick={props.select}>
                     <h5>{title}</h5>

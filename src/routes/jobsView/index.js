@@ -1,7 +1,6 @@
 import { auth } from "../../services/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { JobCard } from "../../components/jobCard";
 import useWindowDimensions from "../../hooks";
 import { JobDetail } from "../../components/jobDetail";
@@ -11,7 +10,7 @@ import { getJobs } from "../../services/api";
 
 
 export function JobsView() {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   const { state } = useLocation(); // The search results from home page
   const navigate = useNavigate();
   const { height, width } = useWindowDimensions(); // Needed to enable ind. scroll
@@ -62,7 +61,7 @@ export function JobsView() {
                 key={i}
                 job={job}
                 select={() => selectJob(job)}
-                isSelected={selectedJob.id === job.id}
+                isSelected={selectedJob._id === job._id}
                 user={user}
                 loading={loading}
               />

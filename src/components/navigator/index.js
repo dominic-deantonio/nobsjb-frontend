@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { NavBarButton } from '../navBarButton';
 import { getFavorites } from '../../services/api';
+import logo from '../../../src/logo.png';
 
 
 function Navigator(props) {
@@ -12,6 +13,7 @@ function Navigator(props) {
 
     async function goToFavorites() {
         const favorites = await getFavorites(props.user);
+        console.log(favorites);
         if (favorites === undefined) {
             // No data to show. Consider showing a toast or an error message?
         } else {
@@ -22,9 +24,12 @@ function Navigator(props) {
     return (
 
         <div>
-            <Navbar collapseOnSelect expand="md" bg="danger" variant="dark">
+            <Navbar collapseOnSelect expand="md" bg="primary" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/">NoBS Jobs</Navbar.Brand>
+                    <Navbar.Brand href="/">
+                        <span>No BS </span>
+                        <img src={logo} style={{ width: '30px' }} />
+                    </Navbar.Brand>
                     {isLoggedIn && <Navbar.Toggle aria-controls="responsive-navbar-nav" />}
                     {isLoggedIn &&
                         <Navbar.Collapse id="responsive-navbar-nav">

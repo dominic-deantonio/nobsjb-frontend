@@ -1,4 +1,4 @@
-import { Heart, InfoCircle } from 'react-bootstrap-icons';
+import { Heart } from 'react-bootstrap-icons';
 import './style.css';
 import { SalaryLabel } from '../salaryLabel';
 
@@ -12,9 +12,7 @@ export function JobDetail(props) {
         type,
         qualifications,
         description,
-        userdidapply,
-        userapplieddate,
-        isfavorite } = props.job;
+    } = props.job;
     const { user } = props;
     return (
         <div >
