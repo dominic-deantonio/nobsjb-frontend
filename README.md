@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# NOBSJb - backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Your final destination for job search
 
-## Available Scripts
+Project Team
 
-In the project directory, you can run:
+* Michael Stack
+* Zach Yusuf
+* Dominic Deantonio
 
-### `npm start`
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project description
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Backend implementation for nobsjb
 
-### `npm test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Project Location
 
-### `npm run build`
+1.) [NobsJB.link](https://www.nobsjobs.link/) - deployed application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2.) [Backend Repository](https://github.com/zachystuff/nobsjb-backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3.) [Front End Repository](https://github.com/dominic-deantonio/nobsjb-frontend)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br />
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get this project started, you need to have the following software installed
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.) [Node LTS 12.16.1](https://nodejs.org/en/download/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2.) You also need an account on [Mongo Atlas](https://account.mongodb.com/account/login)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br />
 
-## Learn More
+### To start the application on the command line
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Download the Zip folder, and on command line run the following commands
+> For Windows - npm run dev
+>  
+> For Mac - sudo npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
 
-### Code Splitting
+### Installing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This is how you can get a development environment running
 
-### Analyzing the Bundle Size
+1.) Install NPM packages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm install
+```
 
-### Making a Progressive Web App
+2.) Start the server (default port is 5000)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm run server-dev
+```
 
-### Advanced Configuration
+3.) Go to <http://localhost:5000> to view application on your local machine.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br />
 
-### Deployment
+## Built With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<table style="{ empty-cells: hide }">
+  <tr>
+  </tr>
+  <tr>
+    <td align="center"><b>Front-end<b></td>
+    <td align="center"><b>Back-end<b></td>
+    <td align="center"><b>Deployment<b></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" alt="React" title="React" width="80px"/></td>
+    <td align="center"><img src="https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg" alt="Node.js" title="Node.js" width="60px"/></td>
+    <td align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png" alt="AWS" title="AWS" width="60px"/></td>
+  </tr>
+  <tr>
+    <td align="center"><img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png" alt="Bootstrap" title="Bootstrap" width="80px"/></td>
+    <td align="center"><img src="https://www.resourcifi.com/wp-content/themes/resourcifi-child/img/express-min.png" alt="Express" title="Express" width="60px"/></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td align="center"><img src="https://images.g2crowd.com/uploads/product/image/large_detail/large_detail_a0b9e371c09d15b9a0b48ed84b31ed35/mongodb-atlas.png" alt="Mongo Atlas" title="Mongo Atlas" width="60px"/></td>
+    <td></td>
+  </tr>
+</table> 
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
