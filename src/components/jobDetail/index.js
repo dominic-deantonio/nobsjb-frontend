@@ -8,9 +8,8 @@ export function JobDetail(props) {
         salary,
         companyname,
         location,
-        payrating,
-        payratinginfo,
-        details,
+        benefits,
+        type,
         qualifications,
         description,
         userdidapply,
@@ -40,8 +39,8 @@ export function JobDetail(props) {
             </p>
             <hr />
             <h3>Details</h3>
-            {details.benefits}<br />
-            {details.type}<br /><br />
+            {benefits}<br />
+            {type}<br /><br />
             <h3>Qualifications</h3>
             {qualifications}<br /><br />
             <h3>Description</h3>

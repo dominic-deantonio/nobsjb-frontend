@@ -1,25 +1,37 @@
-export function PostJobView() {
+import { postJob } from '../../services/api'
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../services/firebase";
+import formJson from 'form-json'
 
-  const doSubmit = (e) => {
+export function PostJobView() {
+  const [user] = useAuthState(auth);
+
+  const doSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const job = formJson(e.currentTarget)
+    const success = await postJob(user, job);
+    if (success) {
+      window.location.reload(true);
+    } else {
+      console.log('Failed to create the job');
+    }
   }
 
   return (
     <div className="container d-flex flex-column">
       <h1 className="pt-2">Create Job Post</h1>
       <form onSubmit={doSubmit} id='job-form' className="d-flex flex-column pt-2">
-        <label htmlFor='job-title'>Job title</label>
-        <input id='job-title' />
+        <label htmlFor='job-title' >Job title</label>
+        <input required id='job-title' name="title" />
         <br />
         <label htmlFor='company'>Company</label>
-        <input id='company' />
+        <input required id='company' name="companyname" />
         <br />
         <label htmlFor='location'>Location</label>
-        <input id='location' />
+        <input required id='location' name="location" />
         <br />
         <label htmlFor='job-type'>Job type</label>
-        <select id="job-type" name="cars">
+        <select required id="job-type" name="type">
           <option value="full-time">Full-time</option>
           <option value="part-time">Part-time</option>
           <option value="contract">Contract</option>
@@ -27,20 +39,20 @@ export function PostJobView() {
         </select>
         <br />
         <label htmlFor='benefits'>Benefits</label>
-        <input id='benefits' />
+        <input required id='benefits' name="benefits" />
         <br />
         <label htmlFor='salary'>Salary</label>
-        <input type='number' id='salary' />
+        <input required type='number' id='salary' name='salary' />
         <br />
         <label htmlFor='qualifications'>Qualifications</label>
-        <textarea id='qualifications' />
+        <textarea required id='qualifications' name='qualifications' />
         <br />
         <label htmlFor='description'>Description</label>
-        <textarea id='description' />
+        <textarea required id='description' name='description' />
         <br />
       </form>
       <button className="btn btn-primary" type="submit" form="job-form" >Post Job</button>
-      <br/><br/><br/><br/>
+      <br /><br /><br /><br />
     </div>
   );
 }

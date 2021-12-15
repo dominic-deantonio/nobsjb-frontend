@@ -7,7 +7,7 @@ export function NavBarButton(props) {
     const isSelected = location.pathname === url;
     return (
         <Nav.Item>
-            <Nav.Link active={isSelected} href={url}>{props.label}</Nav.Link>
+            <Nav.Link onClick={props.onClick} active={isSelected} href={url}>{props.label}</Nav.Link>
         </Nav.Item>
     );
 }
